@@ -1,0 +1,182 @@
+<%if $admin %>
+
+<div class='col-12 seebox removempb '>
+
+  
+      <h1 style='text-align:center;'>Categories</h1>
+  
+  
+</div>
+
+
+
+<!-- aside div -->
+<div class="col-1 vhcenterp  seebox removempb" style="height:2px;">
+ </div>
+
+<div class="col-10 seebox removempb"  >
+  
+  <% MainCategory.all.each do |category|%>
+        <%if !category.template%>
+
+               <h3><%= link_to category.title, main_category_items_path(category.id)%></h3>
+               <p>
+               <%if category.main_category_pics.first %>
+                 <% pic = category.main_category_pics.first.pic_url.url %>
+                 <% pic_escape = category.main_category_pics.first.urlseed %>
+                  <img src="<%= (pic == nil) | (pic == "") ? pic_escape : pic %>" style='height:100px; width:100px;'>
+               <%end%>
+                <%= category.body%></p>
+               <br><button><%= link_to "Edit This Category", edit_main_category_path(category.id) %></button>
+                <hr>
+              
+            <%end%> 
+    <%end%> 
+
+
+<br><br>
+
+
+
+
+
+      <h1>Templates</h1>
+
+      <br>
+      <% MainCategory.all.each do |category|%>
+            <%if category.template%>
+               <h3><%= link_to category.title, main_category_items_path(category.id)%></h3>
+               <p><%= category.body%></p>
+               <%if category.main_category_pics.first%>
+                 <%pic = category.main_category_pics.first.pic_url.url%>
+                 <%pic_escape = category.main_category_pics.first.urlseed%>
+                  <img src="<%= (pic == nil) | (pic == "") ? pic_escape : pic%>" style='height:100px; width:100px;'>
+               <%end%>
+              <br><button><%= link_to "Edit This Category", edit_main_category_path(category.id) %></button>
+          <%end%>
+      <%end%>
+      <br>
+      <br>
+      <button><%= link_to 'Make New Category', new_main_category_path%></button>
+      <br><br><br><br>
+<script src="assets/js/main_categories/index.js"></script>
+</div>
+<%end%><%# ln 1  if 1==0 on %>
+
+
+<!-- ======================================test page 1==================================================================================================== -->
+
+
+
+
+<%if !$admin %>
+ <!-- End Top Bar -->
+<style>
+  .seebox1 {
+    outline:dotted;
+    
+  }
+</style>
+
+
+
+<div ng-app="app1" class="col-12 seebox1 height">
+
+<p></p>
+
+</div>
+
+
+
+    <div class="row column text-center">
+      <h2>Departments</h2>
+      <hr>
+    </div>
+
+    <div class="row small-up-2 large-up-4">
+
+    
+
+
+ <div class="row small-up-2 medium-up-3 large-up-4">
+   <% MainCategory.all.each do |category|%>
+   <%if !category.template%>
+            <div class="column">
+              <%= link_to main_category_path(category.id) do%>
+              <%pic = category.main_category_pics.first.pic_url.url%>
+              <%pic_escape = category.main_category_pics.first.urlseed%>
+              <img class="thumbnail" src="<%= category.main_category_pics.any? ? ((pic == nil) | (pic == "") ? pic_escape : pic) : "https://placehold.it/550x550"%>">
+              <%end%>
+              <h5><%= category.title%></h5>
+            </div>
+   <%end%>
+   <%end%>
+      
+          </div>
+
+
+ <hr>
+
+    <div class="row column text-center">
+      <h2>All Products</h2>
+      <hr>
+    </div>
+
+    <div class="row small-up-2 large-up-4">
+      
+ 
+      
+   <% Item.all.each do |item|%>
+       
+
+
+      <div class="column">
+        <%= link_to main_category_item_path(item.main_category_id, item.id) do%>
+        <div class="thumbnail vhcenterp" style="width:300px; height:400px; background-color:lightgrey; " >
+          <%if item.item_pics.any?%>
+          <%pic = item.item_pics.first.pic_url.url%>
+          <%picseed = item.item_pics.first.urlseed%>
+          <%end%>
+         <img class="thumbnail vhcenters" src="<%= item.item_pics.first ? (pic == nil ? picseed : pic) : "https://placehold.it/300x400" %>" style="hieght:400px;">
+        </div>
+        <%end%>
+        <h5><%= item.name %></h5>
+        <p><%= number_to_currency(item.price)%></p>
+        <%= form_for current_order.order_items.new, remote: true do |f| %>
+        <%= f.hidden_field :quantity, value: 1, class: "form-control", min: 1 %>
+        <%= f.hidden_field :item_id, value: item.id %>
+        <%= f.submit "Add to Cart", class: "button expanded" %>
+        <% end %>
+        
+      </div> 
+
+                <% if $admin%>
+                    <br><button><%= link_to "Edit This Category", edit_main_category_path(category.id) %></button>
+                <%end%>
+
+       
+<%end%> 
+   
+    </div>
+
+    <hr>
+
+
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+    <script src="assets/js/main_categories/index.js"></script>
+    <script>
+      
+      
+      
+      
+      
+       $(document).ready(function(){
+                                          $(document).foundation();
+                                        })
+
+    </script>
+    
+
+<%end%>
