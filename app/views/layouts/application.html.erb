@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html >
 <head>
   <title>E-Store.com</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -21,8 +21,9 @@
 <!--   <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css"> -->
   <link rel="stylesheet" type="text/css" href="<%= request.base_url%>/assets/css/main_categories/index.css">
   <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
+ 
 </head>
-<body>
+<body ng-app="myapp">
     
    
 <!-- top menu bar -->
@@ -106,8 +107,60 @@
       <%= yield %>
      
 
+
+
+
 <!-- <script src="assets/js/application.js"></script> -->
 
 </body>
+  <script>
+
+    (function(){angular.module("myapp", [])})();
+     
+(function() {
+
+     
+               function Image($rootScope) {
+
+                                               var Image = { 
+
+                                                    first_name: "willy",
+                                                    last_name: "wonka",
+                                                    logo: "https://bloccit-120.s3.amazonaws.com/uploads/main_category_pic/pic_url/1/ScreenHunter_05_Sep._17_11.13.gif"
+
+
+                                                     };
+                                                   
+                                                    return Image;
+                                            }
+
+                 angular.module('myapp').factory('Image', ['$rootScope',Image]);
+    
+            })();   
+    
+    
+   
+    
+(function() {
+    function LandingCtrl($Scope,Image) {
+     
+                                        $Scope.image = Image ;
+                                        $Scope.test = "Hello world";
+
+                                        }
+    
+   angular
+    .module('myapp')
+        .controller("LandingCtrl", ["$scope","Image", LandingCtrl]);
+})();    
+    
+    
+    
+</script>  
 </html>
+
+
+
+
+
 
