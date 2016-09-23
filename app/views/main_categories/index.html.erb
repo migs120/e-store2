@@ -76,15 +76,18 @@
     outline:dotted;
     
   }
+  
+  #logo {
+    background-image:url({{image.logo}});
+    background-repeat:no-repeat; 
+    background-size:100% 100%;
+    
+  }
 </style>
 
 
 
-<div class="col-12 seebox1 height">
-
-<p></p>
-
-</div>
+<div class="col-12  height" id="logo"></div>
 
 
 
@@ -168,10 +171,6 @@
     <script src="assets/js/main_categories/index.js"></script>
     <script>
       
-      
-      
-      
-      
        $(document).ready(function(){
                                           $(document).foundation();
                                         })
@@ -179,30 +178,6 @@
     </script>
       
  
-      
-      
-      
-      
- <div  ng-controller="LandingCtrl">
-
-    <p>{{test}}</p> 
-    <p>{{image.first_name}}</p> 
-    <p>{{image.last_name}}</p>
-    <img src="{{image.logo}}">
-</div>
-<!-- CHAT JAVACRIPT -->
-   
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
       
 
 <%end%>

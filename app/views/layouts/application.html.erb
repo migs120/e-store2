@@ -23,7 +23,7 @@
   <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
  
 </head>
-<body ng-app="myapp">
+<body ng-app="myapp" ng-controller="LandingCtrl">
     
    
 <!-- top menu bar -->
@@ -113,50 +113,10 @@
 <!-- <script src="assets/js/application.js"></script> -->
 
 </body>
-  <script>
 
-    (function(){angular.module("myapp", [])})();
-     
-(function() {
-
-     
-               function Image($rootScope) {
-
-                                               var Image = { 
-
-                                                    first_name: "willy",
-                                                    last_name: "wonka",
-                                                    logo: "https://bloccit-120.s3.amazonaws.com/uploads/main_category_pic/pic_url/1/ScreenHunter_05_Sep._17_11.13.gif"
-
-
-                                                     };
-                                                   
-                                                    return Image;
-                                            }
-
-                 angular.module('myapp').factory('Image', ['$rootScope',Image]);
-    
-            })();   
-    
-    
-   
-    
-(function() {
-    function LandingCtrl($Scope,Image) {
-     
-                                        $Scope.image = Image ;
-                                        $Scope.test = "Hello world";
-
-                                        }
-    
-   angular
-    .module('myapp')
-        .controller("LandingCtrl", ["$scope","Image", LandingCtrl]);
-})();    
-    
-    
-    
-</script>  
+  <script src="<%= request.base_url%>/assets/js/application/app.js"></script>
+  <script src="<%= request.base_url%>/assets/js/application/services/Images.js"></script>
+  <script src="<%= request.base_url%>/assets/js/application/controllers/LandingCtrl.js"></script>  
 </html>
 
 
