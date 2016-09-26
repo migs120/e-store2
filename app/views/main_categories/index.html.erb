@@ -1,5 +1,8 @@
 <%if $admin %>
 
+
+
+
 <div class='col-12 seebox removempb '>
 
   
@@ -71,24 +74,25 @@
 
 <%if !$admin %>
  <!-- End Top Bar -->
-<style>
+<style >
   .seebox1 {
     outline:dotted;
     
   }
   
   #logo {
-    background-image:url({{image.logo}});
+    background-image:url("https://s3-us-west-2.amazonaws.com/pics120/mario-e-store/main_categories/index/GnM.png");
+/*     background-image:url({{image.logo}}); */
     background-repeat:no-repeat; 
     background-size:100% 100%;
-    
+/*     ng-style="{'background-image':'url({{image.logo}})'}" */
   }
 </style>
 
 
-
-<div class="col-12  height" id="logo"></div>
-
+<div class="col-1"></div>
+<div class="col-10  height" id="logo"  ></div>
+<div class="col-1"></div>
 
 
     <div class="row column text-center">
@@ -162,7 +166,28 @@
    
     </div>
 
-    <hr>
+   
+      <hr>
+      <ul class="menu">
+       
+         <li>
+          <%= link_to root_path do%>
+          <p style="color:white;">Home</p>
+          <%end%>
+        </li>
+        <li>
+          <%= link_to about_path do%>
+          <p style="color:white;">About</p>
+          <%end%>
+        </li>
+        <li>
+          <%= link_to contact_path do%>
+          <p style="color:white;">Contact</p>
+          <%end%>
+        </li>
+        <li class="float-right" style="float:right;">Copyright 2016</li>
+      </ul>
+    
 
 
 

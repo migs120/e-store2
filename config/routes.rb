@@ -64,7 +64,7 @@ post "paypal", to: "order_checkouts#pal_purchase"
 post "pal_return", to: "order_checkouts#pal_return"
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-
+get "contact", to: "welcome#contact"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

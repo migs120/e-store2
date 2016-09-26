@@ -51,13 +51,13 @@
         <img class="thumbnail" src="<%= @item.item_pics.any? ? (pic == nil ? pic_seed : pic): "https://placehold.it/650x350"%>">
         <div class="row small-up-4">
           <div class="column">
-            <img class="thumbnail" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRC4Iwiwxr-myVqwN_s-u7gRUa_WA_sjWPNCv3fveujkk3_McEi">
+            <img class="thumbnail" src="<%= @item.item_pics.any? ? (pic == nil ? pic_seed : pic): "https://placehold.it/250x200"%>">
           </div>
           <div class="column">
             <img class="thumbnail" src="https://placehold.it/250x200">
           </div>
           <div class="column">
-            <img class="thumbnail" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRC4Iwiwxr-myVqwN_s-u7gRUa_WA_sjWPNCv3fveujkk3_McEi">
+            <img class="thumbnail" src="https://placehold.it/250x200">
           </div>
           <div class="column">
             <img class="thumbnail" src="https://placehold.it/250x200">
@@ -110,9 +110,21 @@
       <hr>
       <ul class="menu">
        
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li>
+          <%= link_to root_path do%>
+          <p style="color:white;">Home</p>
+          <%end%>
+        </li>
+        <li>
+          <%= link_to about_path do%>
+          <p style="color:white;">About</p>
+          <%end%>
+        </li>
+        <li>
+          <%= link_to contact_path do%>
+          <p style="color:white;">Contact</p>
+          <%end%>
+        </li>
         <li class="float-right">Copyright 2016</li>
       </ul>
     </div>
