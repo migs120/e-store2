@@ -56,12 +56,14 @@ Rails.application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = "http://assets.example.com"
-config.after_initialize do
+
+
+  config.after_initialize do
   ActiveMerchant::Billing::Base.mode = :production
   ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
-    :login => "not yet set up",
-    :password => "FXWU58S7KXFxxxx",
-    :signature => "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+             :login => ENV['PAYPAL_USER'],
+            :password => ENV['PAYPAL_PASSWORD'],
+            :signature => ENV['PAYPAL_SIGNATURE']
   )
 end
   # Precompile additional assets.
