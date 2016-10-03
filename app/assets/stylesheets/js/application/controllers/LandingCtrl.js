@@ -1,9 +1,9 @@
 (function() {
-    function LandingCtrl($Scope,Image) {
+    function LandingCtrl($scope,Image) {
                                       
-                                          $Scope.image = Image ; 
+                                        $scope.image = Image ; 
                                     //  $Scope.image = return "https://s3-us-west-2.amazonaws.com/pics120/mario-e-store/main_categories/index/GnM.png"
-
+                                         
                                         }
     
    angular

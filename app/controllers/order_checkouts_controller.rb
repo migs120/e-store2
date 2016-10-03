@@ -136,7 +136,7 @@ class OrderCheckoutsController < ApplicationController
   def pal_return
 #=begin
    
-    OrderCheckout.create(instructions: params.to_s)
+#     OrderCheckout.create(instructions: params.to_s)
    
     
    # redirect_to root_path
@@ -182,20 +182,7 @@ class OrderCheckoutsController < ApplicationController
     
 #=end
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+   Mailer.email("migs910@hotmail.com")
     
     
   end
