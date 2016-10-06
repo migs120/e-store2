@@ -70,8 +70,6 @@
 <!-- ======================================test page 1==================================================================================================== -->
 
 
-
-
 <%if !$admin %>
  <!-- End Top Bar -->
 <style >
@@ -82,7 +80,7 @@
   
   #logo {
 /*     background-image:url("https://s3-us-west-2.amazonaws.com/pics120/mario-e-store/main_categories/index/GnM.png"); */
-    background-image:url({{image.logo}});
+/*     background-image:url({{image.logo}}); */
     background-repeat:no-repeat; 
     background-size:100% 100%;
 /*     ng-style="{'background-image':'url({{image.logo}})'}" */
@@ -91,7 +89,7 @@
 
 
 <div class="col-1"></div>
-<div class="col-10  height" id="logo"  ></div>
+<div class="col-10  height" id="logo" ng-style="{'background-image':'url({{image.logo}})'}" ></div>
 <div class="col-1"></div>
 
 
@@ -198,6 +196,7 @@
       
        $(document).ready(function(){
                                           $(document).foundation();
+//                                          location.reload();
                                         })
 
     </script>
@@ -208,7 +207,7 @@
 <%end%>
       
       
-      
+    
       
       
       
