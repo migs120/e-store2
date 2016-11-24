@@ -7,9 +7,9 @@
   <div class="col-11 col-p-11" style="margin:30px;">
     
   <%= link_to paypal_path, method: :post do %> 
-  <img src="<%request.base_url%>/assets/images/paypal.gif" class="center" style=" float:right; width:180px; height:60px;"><br>
+  <img src="/images/paypal.gif" class="center" style=" float:right; width:180px; height:60px;"><br>
     <%end%>
-  <img src="<%request.base_url%>/assets/images/hand.gif" class="center" style="float:right; width:40px; height:40px;">
+  <img src="/images/hand.gif" class="center" style="float:right; width:40px; height:40px;">
 </div>
   
 <!--   right-aside space for image-->
@@ -124,7 +124,7 @@
     <button class="center new-checkout-b" id="instore-checkout-button" style="">in-store checkout</button><br>
         <%= link_to paypal_path, method: :post do %> 
     <button class="center new-checkout-b" style="" >paypal express</button><br>
-        <img src="<%request.base_url%>/assets/images/paypal.gif">
+        <img src="/images/paypal.gif">
         <%end%>
       </div>
 </div>
@@ -135,7 +135,7 @@
 
 
 
-<script src="<%= request.base_url%>/assets/js/order_checkouts/new.js"></script>
+
 
 
 <script>
