@@ -32,7 +32,7 @@ end
       #end
     
     else
-      Order.new
+      Order.create()
     end
   end
  
