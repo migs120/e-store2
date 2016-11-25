@@ -4,8 +4,8 @@
                function Image($rootScope) {
 
                                                var Image = { 
-                                                            logo: "https://www.gazelle.com/thehorn/wp-content/uploads/2015/04/A-Many-CellPhones.jpg" 
-
+                                                            logo: "https://s3-us-west-2.amazonaws.com/pics120/migtech+store/main_categories/index/A-Many-CellPhones.jpg", 
+                                                            logoN: "https://s3-us-west-2.amazonaws.com/pics120/migtech+store/main_categories/index/logot.png"
                                                            };
                                                    
                                                     return Image;
