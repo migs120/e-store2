@@ -76,22 +76,20 @@
  <!-- End Top Bar -->
 <style >
   .seebox1 {
-    outline:dotted;
-    
-  }
+            outline:dotted;
+            
+          }
   
-  #logo {
-   /*background-image:url("https://www.gazelle.com/thehorn/wp-content/uploads/2015/04/A-Many-CellPhones.jpg");*/
-     background-image:url({{image.logo}}); 
-    background-repeat:no-repeat; 
-    background-size:100% 100%;
-  /*  ng-style="{'background-image':'url({{image.logo}})'}" */
-  }
+
 </style>
 
 
 <div class="col-1"></div>
-<div class="col-10  height" id="logo"  ></div>
+
+<div class="col-10  height" id="logo" ng-style="{'background-image':'url({{image.logo}})'}">
+    <img id="logoN" ng-src="{{image.logoN}}" >
+</div>
+
 <div class="col-1"></div>
 
 
